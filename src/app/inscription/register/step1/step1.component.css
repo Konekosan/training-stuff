@@ -16,3 +16,26 @@
 .input-label {
     font-size: medium;
 }
+
+::ng-deep .mat-step-icon {
+  width: 40px !important;
+  height: 40px !important;
+  font-size: 18px; /* taille du numéro */
+}
+
+/* Centrer le numéro verticalement */
+::ng-deep .mat-step-icon .mat-step-icon-content {
+  line-height: 40px;
+}
+
+/* Optionnel : cercles actifs / terminés plus visibles */
+::ng-deep .mat-step-icon.mat-step-icon-selected {
+  background-color: #ff9822; /* bleu Material */
+  color: white;
+  font-weight: bold;
+}
+
+::ng-deep .mat-step-icon.mat-step-icon-completed {
+  background-color: #4caf50; /* vert Material */
+  color: white;
+}

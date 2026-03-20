@@ -25,12 +25,12 @@ export const routes: Routes = [
                     import('./inscription/register/step2/step2.component').then(m => m.Step2Component)
             },
             { 
-                path: 'step3', 
+                path: 'step3',
                 loadComponent: () => 
                     import('./inscription/register/step3/step3.component').then(m => m.Step3Component)
             },
             { 
-                path: 'summary', 
+                path: 'summary',
                 loadComponent: () => 
                     import('./inscription/register/summary/summary.component').then(m => m.SummaryComponent)
             }

@@ -43,6 +43,12 @@ export class MainComponentComponent {
       description: 'Web Forms',
       route: 'register/step1',
       icon: 'bi-book'
+    },
+    {
+      title: 'Reporting',
+      description: 'Graphiques et reporting Applicatif',
+      route: '',
+      icon: 'bi-graph-up'      
     }
   ];
 }
