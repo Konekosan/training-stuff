@@ -1,0 +1,48 @@
+<div class="container">
+    <button mat-raised-button color="primary" (click)="goBack()">
+        ← Retour à l'accueil
+    </button>
+
+    <h1>Liste des fruits</h1>
+    <div *ngIf="isLoading" class="loading-container">
+    <mat-spinner diameter="50"></mat-spinner>
+    <p>Chargement...</p>
+    </div>
+    <div *ngIf="!isLoading">
+        <table mat-table [dataSource]="fruitTable" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="family">
+            <th mat-header-cell *matHeaderCellDef> Family </th>
+            <td mat-cell *matCellDef="let element"> {{element.family}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="order">
+            <th mat-header-cell *matHeaderCellDef> Order </th>
+            <td mat-cell *matCellDef="let element"> {{element.order}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="genus">
+            <th mat-header-cell *matHeaderCellDef> Genus </th>
+            <td mat-cell *matCellDef="let element"> {{element.genus}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="goToDetail(row)" 
+            class="clickable-row">
+        </tr>
+        </table>
+        <mat-paginator 
+                    [length]="fruits.length"
+                    [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]"
+                    aria-label="Select page">
+        </mat-paginator>
+    </div>
+</div>
+

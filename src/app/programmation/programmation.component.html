@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="p-4" style="width: 400px; background-color: #f0f0f0; border-radius: 10px;">
+    <h4 class="text-center mb-4">Opérations simple</h4>
+
+    <div class="mb-3">
+      <label for="inputValue" class="form-label">Entrez une valeur</label>
+      <input type="text" id="inputValue" class="form-control" [(ngModel)]="inputValue" (ngModelChange)="detectType()">
+    </div>
+
+    <div *ngIf="detectedType" class="mb-2 text-muted">
+      Type détecté : {{ detectedType }}
+    </div>
+
+    <div *ngIf="result" class="mb-3">
+      <label for="result" class="form-label">Résultat</label>
+      <input type="string" id="result" class="form-control" [(ngModel)]="result" [disabled]="true">
+    </div>
+    
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <ng-container *ngFor="let card of algoCards">
+      <div class="col-12 col-md-6 col-lg-4 mb-4" *ngIf="card.allowedTypes.includes(detectedType)">
+        <div class="card clickable-card h-100" (click)="onCardClick(card)">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <p class="card-text">{{ card.description }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
