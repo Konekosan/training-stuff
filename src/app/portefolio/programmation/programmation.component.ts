@@ -1,13 +1,20 @@
 import { Component, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Operations } from '../models/main-component.model';
+import { Operations } from '../../models/main-component.model';
 import { CommonModule } from '@angular/common';
 import { OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-programmation',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, 
+            CommonModule,
+            MatButtonModule,
+            MatIconModule
+          ],
   templateUrl: './programmation.component.html',
   styleUrl: './programmation.component.css'
 })
@@ -17,10 +24,14 @@ export class ProgrammationComponent implements OnInit{
   detectedType: string = '';
   parsedValue: number | string | Array<number | string> | null = null;
 
+  constructor(private router: Router){
+
+  }
+
   ngOnInit(): void {
   }
 
-  detectType() {
+  detectType(): void {
     if (!this.inputValue) {
       this.detectedType = 'Aucun type detecté';
       this.result = '';
@@ -49,12 +60,12 @@ export class ProgrammationComponent implements OnInit{
   }
 
   // Pair ou impair
-  is_pair_impair_number(){
+  is_pair_impair_number(): void{
     this.result = parseInt(this.inputValue) % 2 === 0 ? 'Pair' : 'Impair';
   }
 
   // Somme des nombres dans une liste
-  sum_array(){
+  sum_array(): void{
     let result: number = 0;
     const parsed = JSON.parse(this.inputValue);
     for (let i of parsed){
@@ -64,7 +75,7 @@ export class ProgrammationComponent implements OnInit{
   }
 
   // Valeur max dans une liste
-  maxValue(){
+  maxValue(): void{
     const parsed = JSON.parse(this.inputValue);
 
     let max = parsed[0];
@@ -75,7 +86,7 @@ export class ProgrammationComponent implements OnInit{
   }
 
   // Inverser liste à la main
-  reverse_array(){
+  reverse_array(): void{
     const parsed = JSON.parse(this.inputValue);
     let newArray = [];
     
@@ -92,13 +103,13 @@ export class ProgrammationComponent implements OnInit{
   }
 
   // Compter le nombre de voyelle
-  compt_voyelles(){
+  compt_voyelles(): void{
     const voyelles = 'aeiouAEIOU'
     this.result = this.inputValue.split('').filter(result => voyelles.includes(result)).length.toString();
   }
 
   // Palindrome
-  is_palindrome(){
+  is_palindrome(): void{
     this.result = 'Faux';
     const result = this.inputValue === this.inputValue.split('').reverse().join('');
     if (result === true){
@@ -106,7 +117,7 @@ export class ProgrammationComponent implements OnInit{
     }
   }
 
-  onCardClick(card: Operations) {
+  onCardClick(card: Operations): void {
     switch (card.click) {
       case 'returnValue':
         this.returnValue();
@@ -132,11 +143,15 @@ export class ProgrammationComponent implements OnInit{
     }
   }
 
-  returnValue(){
+  returnValue(): void{
     this.result = this.inputValue;
   }
 
-  parseInput() {
+  goBack():void {
+    this.router.navigate(['/portefolio']);
+  }
+
+  parseInput(): void {
   try {
       const parsed = JSON.parse(this.inputValue);
       this.parsedValue = parsed;

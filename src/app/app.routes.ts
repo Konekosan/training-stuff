@@ -1,18 +1,20 @@
 import { Routes } from '@angular/router';
-import { ProgrammationComponent } from './programmation/programmation.component';
-import { MainComponentComponent } from './main-component/main-component.component';
-import { TrainingFrameworkComponent } from './training-framework/training-framework.component';
+import { ProgrammationComponent } from './portefolio/programmation/programmation.component';
+import { MainComponentComponent } from './portefolio/main-component/main-component.component';
+import { TrainingFrameworkComponent } from './portefolio/training-framework/training-framework.component';
 import { FruitListComponent } from './produits/fruits/fruit-list/fruit-list.component';
 import { FruitDetailsComponent } from './produits/fruits/fruit-details/fruit-details.component';
+import { HomeComponentComponent } from './home-component/home-component.component';
 
 export const routes: Routes = [
-    { path: '', component: MainComponentComponent },
-    { path:'programmation', component: ProgrammationComponent },
-    { path: 'training', component: TrainingFrameworkComponent },
-    { path: 'fruits', component: FruitListComponent},
-    { path: 'fruit/:id', component: FruitDetailsComponent },
+    { path: '', component: HomeComponentComponent },
+    { path: 'portefolio', component: MainComponentComponent },
+    { path:'portefolio/programmation', component: ProgrammationComponent },
+    { path: 'portefolio/training', component: TrainingFrameworkComponent },
+    { path: 'portefolio/fruits', component: FruitListComponent},
+    { path: 'portefolio/fruit/:id', component: FruitDetailsComponent },
     {
-        path: 'register',
+        path: 'portefolio/register',
         children: [
             { 
                 path: 'step1', 

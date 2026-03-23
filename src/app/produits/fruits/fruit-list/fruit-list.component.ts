@@ -65,6 +65,6 @@ export class FruitListComponent implements OnInit  {
   }
 
   goBack():void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/portefolio']);
   }
 }

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { TopBarComponent } from '../top-bar/top-bar.component';
-import { Card } from '../models/main-component.model';
+import { TopBarComponent } from '../../top-bar/top-bar.component';
+import { Card } from '../../models/main-component.model';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-main-component',
   standalone: true,
@@ -13,11 +13,13 @@ import { CommonModule } from '@angular/common';
 })
 export class MainComponentComponent {
 
+  constructor(public route: ActivatedRoute) {}
+
   cards: Card[] = [
     {
       title: 'Fruits',
       description: 'Liste de fruits',
-      route: '/fruits',
+      route: 'fruits',
       icon: 'bi-palette-fill'
     },
     {

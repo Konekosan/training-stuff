@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MainComponentComponent } from './main-component/main-component.component';
+import { MainComponentComponent } from './portefolio/main-component/main-component.component';
 import { RouterModule } from '@angular/router';
 import { TopBarComponent } from './top-bar/top-bar.component';
 
