@@ -1,3 +1,69 @@
-.container {
-    margin-top: 3rem;
+
+.hero {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-top: 0;
 }
+
+/* Image principale */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/main-image.png');
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* Effet flou sur les côtés */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(20px); /* 👈 flou */
+  -webkit-backdrop-filter: blur(20px);
+  
+  /* masque pour ne flouter que les côtés */
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    transparent 20%,
+    transparent 80%,
+    black 100%
+  );
+  
+  z-index: 2;
+}
+
+/* Contenu au-dessus */
+.content {
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Pour coller à gauche et droite */
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0; /* couleur de fond du conteneur, optionnelle */
+}
+
+.box {
+  width: 700px;
+  height: 600px;
+  background-color: #333333; /* gris foncé */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px; /* optionnel, coins arrondis */
+}
+
+

@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MainComponentComponent } from './portefolio/main-component/main-component.component';
 import { RouterModule } from '@angular/router';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { FooterComponentComponent } from './footer-component/footer-component.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MainComponentComponent, RouterModule, TopBarComponent],
+  imports: [RouterOutlet, RouterModule, TopBarComponent, FooterComponentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

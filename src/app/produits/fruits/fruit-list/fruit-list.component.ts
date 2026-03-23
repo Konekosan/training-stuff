@@ -61,10 +61,10 @@ export class FruitListComponent implements OnInit  {
   }
 
   goToDetail(fruit: Fruit):void {
-    this.router.navigate(['/fruit', fruit.id]);
+    this.router.navigate(['/portefolio/fruit', fruit.id]);
   }
 
   goBack():void {
-    this.router.navigate(['/portefolio']);
+    this.router.navigate(['/']);
   }
 }
