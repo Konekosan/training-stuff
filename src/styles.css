@@ -5,12 +5,17 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body { height: 100%; margin: 0; }
-body { font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-app-root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* prend toute la hauteur de l'écran */
+ html, body {
+  height: 100%;
+  margin: 0;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}

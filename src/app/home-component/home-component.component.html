@@ -1,17 +1,166 @@
 <section class="hero">
-  <div class="content">
-    <h1>Bienvenue sur mon site</h1>
-    <p>Application développée sur Angular 17 et python</p>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <span class="badge">Développeur Fullstack Angular & Python</span>
+      <h1>Bienvenue sur ma Web appli</h1>
+      <p>
+        Enchanté, je suis Benjamin PARAGEAUD, développeur fullstack depuis {{ calculateDureeExp() }} ans.
+        Ceci est une application développée
+        sur Angular 17, Python FastAPI, Docker, PostGreSQL.
+      </p>
+      <p>
+        Je suis passionné du monde du developpement et des nouvelles technologies. J'espère que ce site va vous entrainer dans mon
+        univers.
+        Cette application est une sandbox applicative ou je peux
+        m'entrainer sur le framework Angular, la gestion de ma BDD PostGreSQL, et ma POO.
+      </p>
+
+      <div class="hero-actions">
+        <a routerLink="/portefolio" class="btn btn-primary">Voir mon portfolio</a>
+        <a href="#about" class="btn btn-secondary">À propos de moi</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img src="/assets/main-image.png" alt="Illustration portfolio" />
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="container">
-  <div class="box left">Gauche</div>
-  <div class="box right">Droite</div>
-</div>
+<section class="about section section-dark" id="about">
+  <div class="section-header">
+    <span class="section-label">Résumé</span>
+    <h2>Un profil full-stack orienté expérience utilisateur</h2>
+  </div>
 
-<div class="container" id="test">
-  <h1>coucou</h1>
-  <p>Some Texte</p>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        Je développe des applications web en mettant l’accent sur la clarté,
+        l’esthétique et la qualité technique. J’aime construire des interfaces
+        fluides côté Angular et les relier à des services backend performants en Python.
+      </p>
+      <p>
+        Mon objectif est de créer des produits utiles, modernes et agréables à utiliser,
+        avec une attention particulière portée au design, à la structure du code et à la maintenabilité.
+      </p>
+    </div>
 
-</div>
+    <div class="about-highlights">
+      <div class="highlight-card">
+        <h3>Front-end</h3>
+        <p>Angular, TypeScript, HTML, CSS, composants réutilisables, responsive design.</p>
+      </div>
+
+      <div class="highlight-card">
+        <h3>Back-end</h3>
+        <p>Python, FastAPI, APIs REST, architecture propre, intégration de données.</p>
+      </div>
+
+      <div class="highlight-card">
+        <h3>Objectif</h3>
+        <p>Créer des applications complètes, belles visuellement et solides techniquement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills section section-accent">
+  <div class="section-header">
+    <span class="section-label">Compétences</span>
+    <h2>Technologies que j’utilise</h2>
+  </div>
+
+  <div class="skills-list">
+    <span>Angular</span>
+    <span>TypeScript</span>
+    <span>HTML5</span>
+    <span>CSS3</span>
+    <span>Python</span>
+    <span>FastAPI</span>
+    <span>REST API</span>
+    <span>Git</span>
+    <span>Responsive Design</span>
+    <span>UI / UX</span>
+  </div>
+</section>
+
+<section class="services section section-soft">
+  <div class="section-header">
+    <span class="section-label">Ce que je fais</span>
+    <h2>Des projets web complets du front au back</h2>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Interfaces modernes</h3>
+      <p>
+        Création d’interfaces Angular propres, dynamiques et pensées pour une expérience fluide.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>APIs performantes</h3>
+      <p>
+        Développement de services backend avec FastAPI pour alimenter les applications de façon fiable.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Architecture cohérente</h3>
+      <p>
+        Mise en place d’une structure claire pour faciliter l’évolution, la maintenance et la qualité du projet.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="projects-preview section section section-dark">
+  <div class="section-header">
+    <span class="section-label">Portfolio</span>
+    <h2>Quelques projets mis en avant</h2>
+  </div>
+
+  <div class="projects-grid">
+    <article class="project-card">
+      <div class="project-top">
+        <span class="project-tag">Angular</span>
+        <span class="project-tag">FastAPI</span>
+      </div>
+      <h3>Projet Portfolio</h3>
+      <p>
+        Un site personnel moderne pour présenter mon profil, mes compétences et mes réalisations.
+      </p>
+    </article>
+
+    <article class="project-card">
+      <div class="project-top">
+        <span class="project-tag">Frontend</span>
+        <span class="project-tag">UI</span>
+      </div>
+      <h3>Interface Web Responsive</h3>
+      <p>
+        Conception d’une interface élégante avec composants réutilisables et design adaptatif.
+      </p>
+    </article>
+
+    <article class="project-card">
+      <div class="project-top">
+        <span class="project-tag">API</span>
+        <span class="project-tag">Python</span>
+      </div>
+      <h3>Backend FastAPI</h3>
+      <p>
+        Création d’une API REST rapide et structurée pour alimenter une application web moderne.
+      </p>
+    </article>
+  </div>
+
+  <div class="section-footer">
+    <a routerLink="/portfolio" class="btn btn-primary">Découvrir tous mes projets</a>
+  </div>
+</section>
