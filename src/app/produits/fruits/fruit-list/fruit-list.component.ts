@@ -1,7 +1,7 @@
 import { Component,  ViewChild, AfterViewInit  } from '@angular/core';
 import { Fruit } from '../../../models/Fruit.model';
 import { OnInit } from '@angular/core';
-import { FoodService } from '../../../services/food.service';
+import { FoodService } from '../../../services/produits/food.service';
 import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
@@ -65,6 +65,6 @@ export class FruitListComponent implements OnInit  {
   }
 
   goBack():void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/portefolio']);
   }
 }

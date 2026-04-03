@@ -5,10 +5,16 @@ import { TrainingFrameworkComponent } from './portefolio/training-framework/trai
 import { FruitListComponent } from './produits/fruits/fruit-list/fruit-list.component';
 import { FruitDetailsComponent } from './produits/fruits/fruit-details/fruit-details.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
+import { LoginComponentComponent } from './login-component/login-component.component';
+import { authGuard } from './core/guards/auth.gard';
 
 export const routes: Routes = [
     { path: '', component: HomeComponentComponent },
-    { path: 'portefolio', component: MainComponentComponent },
+    { 
+        path: 'portefolio',
+        canActivate: [authGuard],
+        component: MainComponentComponent 
+    },
     { path:'portefolio/programmation', component: ProgrammationComponent },
     { path: 'portefolio/training', component: TrainingFrameworkComponent },
     { path: 'portefolio/fruits', component: FruitListComponent},
@@ -37,7 +43,18 @@ export const routes: Routes = [
                     import('./inscription/register/summary/summary.component').then(m => m.SummaryComponent)
             }
         ]
-    }
+    },
+    {
+        path: 'login',
+        component: LoginComponentComponent
+    },
+    // {
+    //     path: 'dashboard',
+    //     canActivate: [authGuard],
+    //     loadComponent: () =>
+    //         import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
+    // }
+
 ];
 
 

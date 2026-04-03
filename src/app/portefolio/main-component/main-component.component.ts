@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-main-component',
   standalone: true,
-  imports: [TopBarComponent, RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './main-component.component.html',
   styleUrl: './main-component.component.css'
 })
@@ -20,7 +20,7 @@ export class MainComponentComponent {
       title: 'Fruits',
       description: 'Liste de fruits',
       route: 'fruits',
-      icon: 'bi-palette-fill'
+      icon: 'bi-apple'
     },
     {
       title: 'Programmation',

@@ -4,7 +4,7 @@
   align-items: center;
   padding: 0 1rem;
   /* background: linear-gradient(135deg, #ff9c11, #ffce2b); */
-background: linear-gradient(135deg, #141414, #2c2c2c);
+  background: linear-gradient(135deg, #141414, #2c2c2c);
 
   .logo {
     font-size: 1.5rem;
@@ -27,4 +27,20 @@ background: linear-gradient(135deg, #141414, #2c2c2c);
       color: #ffeb3b;
     }
   }
+
+  .spacer {
+  flex: 1;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 8px;
+    margin-right: 16px;
+  }
+
+  .username {
+    margin-left: 6px;
+    font-weight: 500;
+  }
 }
+

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FoodService } from '../../../services/food.service';
+import { FoodService } from '../../../services/produits/food.service';
 import { map, Observable } from 'rxjs';
 import { Fruit } from '../../../models/Fruit.model';
 import { OnInit } from '@angular/core';
@@ -33,7 +33,7 @@ export class FruitDetailsComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/fruits']);
+    this.router.navigate(['/portefolio/fruits']);
   }
 
   getFruitById(id: number): Observable<Fruit> {

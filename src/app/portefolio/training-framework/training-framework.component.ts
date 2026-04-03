@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { FoodService } from '../../services/food.service';
+import { FoodService } from '../../services/produits/food.service';
 
 @Component({
   selector: 'app-training-framework',
