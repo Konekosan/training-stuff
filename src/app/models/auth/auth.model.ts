@@ -11,5 +11,6 @@ export interface TokenResponse {
 export interface MeResponse {
   id: number;
   nom: string;
+  prenom: string;
   email: string;
 }

@@ -7,20 +7,26 @@ import { FruitDetailsComponent } from './produits/fruits/fruit-details/fruit-det
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { authGuard } from './core/guards/auth.gard';
+import { PortefolioshellComponent } from './portefolio/portefolioshell/portefolioshell.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponentComponent },
     { 
         path: 'portefolio',
-        canActivate: [authGuard],
-        component: MainComponentComponent 
+        canActivateChild: [authGuard],
+        component: PortefolioshellComponent,
+        children:[
+            { path:'', component: MainComponentComponent },
+            { path:'programmation', component: ProgrammationComponent },
+            { path: 'training', component: TrainingFrameworkComponent },
+            { path: 'fruits', component: FruitListComponent},
+            { path: 'fruit/:id', component: FruitDetailsComponent },
+        ]
     },
-    { path:'portefolio/programmation', component: ProgrammationComponent },
-    { path: 'portefolio/training', component: TrainingFrameworkComponent },
-    { path: 'portefolio/fruits', component: FruitListComponent},
-    { path: 'portefolio/fruit/:id', component: FruitDetailsComponent },
     {
-        path: 'portefolio/register',
+        path: 'register',
+        loadComponent: () =>
+            import('./inscription/register/register/register.component').then(m => m.RegisterComponent),
         children: [
             { 
                 path: 'step1', 
@@ -47,14 +53,7 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponentComponent
-    },
-    // {
-    //     path: 'dashboard',
-    //     canActivate: [authGuard],
-    //     loadComponent: () =>
-    //         import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
-    // }
-
+    }
 ];
 
 

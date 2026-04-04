@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RegisterStateService } from '../register-state.service';
 
 @Component({
   selector: 'app-summary',
@@ -9,4 +10,6 @@ import { Component } from '@angular/core';
 })
 export class SummaryComponent {
 
+  constructor(private registerService: RegisterStateService){
+  }
 }

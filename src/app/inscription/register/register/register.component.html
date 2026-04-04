@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-horizontal-stepper
+    [selectedIndex]="currentStepIndex"
+    (selectionChange)="onStepChange($event)"
+  >
+    <mat-step label="Infos" [completed]="isStepCompleted('step1')"></mat-step>
+    <mat-step label="Compte" [completed]="isStepCompleted('step2')"></mat-step>
+    <mat-step label="Adresse" [completed]="isStepCompleted('step3')"></mat-step>
+    <mat-step label="Résumé"></mat-step>
+  </mat-horizontal-stepper>
+
+  <router-outlet></router-outlet>
+
+  <div class="buttons">
+    <button mat-raised-button type="button" (click)="previous()">
+      Retour
+    </button>
+
+    <button mat-raised-button color="primary" type="button" (click)="next()">
+      {{ currentStepIndex === 3 ? 'Valider' : 'Suivant' }}
+    </button>
+  </div>
+</div>
